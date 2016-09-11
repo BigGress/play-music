@@ -1,0 +1,8 @@
+<div class="range-component" flex>
+    <div class="playTime">{{time | seconedToMinute}}</div>
+    <div class="range">
+        <div class="range-round" [ngStyle]="{'left': time/total * 100 + '%'}"></div>
+        <div class="range-line"></div>
+    </div>
+    <div class="totalTime">{{total | seconedToMinute}}</div>
+</div>

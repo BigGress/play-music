@@ -1,0 +1,31 @@
+.range-component{
+    display: flex;
+
+    .range{
+        flex: 0 0 80%;
+        position: relative;
+
+    }
+
+    //点
+    .range-round{
+        background: white;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        top: 3px;
+        left: 2px;
+    }
+
+    //线
+    .range-line{
+        width: 98%;
+        height: 2px;
+        background-image: linear-gradient(to top, rgba(250, 250, 250, 1.0),rgba(250, 250, 250, 1.0));
+        vertical-align: middle;
+        position: absolute;
+        top: 7px;
+        left: 1%;
+    }
+}

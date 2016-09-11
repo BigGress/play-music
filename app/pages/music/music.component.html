@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            {{!!play.playingInfo && play.playingInfo.name}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="music">
+    <button (click)="test($event)">text</button>
+
+
+
+</ion-content>
+
+<ion-footer class="music-footer">
+    <div class="playInfo">
+        <play-range total="{{!!play.playingInfo && play.playingInfo.totalTime}}"
+                    time="{{!!play.playingInfo && play.playingInfo.playTime}}"></play-range>
+    </div>
+    <div class="playBtnGroup">
+        <button (click)="play.preMusic($event)"
+                outline round ion-button
+                class="operation-btn">
+            <ion-icon outline ion-button round name="skip-backward"></ion-icon>
+        </button>
+
+        <button (click)="play.playMusic($event)"
+                outline ion-button round
+                class="operation-btn"
+                *ngIf="play.playingStatus === 0 || !play.playingStatus">
+                <ion-icon class="music-icon play" name="play"></ion-icon>
+        </button>
+
+        <button (click)="play.pauseMusic($event)"
+                outline ion-button round
+                class="operation-btn"
+                *ngIf="play.playingStatus === 1">
+                <ion-icon class="music-icon" name="pause"></ion-icon>
+        </button>
+
+        <button (click)="play.nextMusic($event)"
+                outline round ion-button
+                class="operation-btn">
+            <ion-icon name="skip-forward"></ion-icon>
+        </button>
+
+    </div>
+</ion-footer>

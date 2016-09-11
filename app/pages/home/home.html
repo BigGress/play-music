@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>音乐列表</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+    <!--<div id="music" *ngIf="play.playingInfo">
+        <h3>{{play.playingInfo.name}}</h3>
+        <p class="text-right">time:{{play.playingInfo.totalTime | seconedToMinute}}</p>
+        <p class="text-right">play-time:{{play.playingInfo.playTime | seconedToMinute}}</p>
+    </div>
+
+    <button (click)="getList($event)">list</button>
+    <button (click)="play.consoleMusic($event)">console</button>-->
+
+    <!--{{!!playInfo && playInfo.nativeURL}}-->
+    <!--<img [src]="img" alt="">-->
+    <!--<audio controls [src]="!!playInfo ? playInfo : 'file:///storage/emulated/0/Music/%E5%A2%A8%E6%98%8E%E6%A3%8B%E5%A6%99%20-%20%E9%86%89%E6%AD%A4%E9%97%B4.mp3 '"></audio>-->
+
+    <!--<button (click)="play.playMusic()">播放</button>
+    <button (click)="play.pauseMusic()">暂停</button>
+    <button (click)="play.stopMusic()">停止</button>-->
+
+    <ion-list>
+        <ion-item (click)="play.getMusic(item,i)"
+                    *ngFor="let item of mp3Arr;let i = index">{{item.name}}</ion-item>
+    </ion-list>
+</ion-content>
+
+<ion-footer class="home-footer">
+    <a (click)="goToPlayPage()" *ngIf="play.playingInfo">
+        <h4>{{play.playingInfo.name}}</h4>
+    </a>
+
+    <div class="btn-groups">
+        <button (click)="play.playMusic($event)"
+                outline ion-button round
+                class="operation-btn"
+                *ngIf="play.playingStatus === 0 || !play.playingStatus">
+                <ion-icon class="music-icon play" name="play"></ion-icon>
+        </button>
+
+        <button (click)="play.pauseMusic($event)"
+                outline ion-button round
+                class="operation-btn"
+                *ngIf="play.playingStatus === 1">
+                <ion-icon class="music-icon" name="pause"></ion-icon>
+        </button>
+
+        <button (click)="play.nextMusic($event)"
+                outline round ion-button
+                class="operation-btn">
+            <ion-icon name="skip-forward"></ion-icon>
+        </button>
+    </div>
+</ion-footer>

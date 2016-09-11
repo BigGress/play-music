@@ -1,0 +1,25 @@
+.home {
+
+}
+
+
+.home-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2%;
+
+    .btn-groups{
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .operation-btn{
+        font-size: 10px;
+        width: 36px;
+        height: 36px;
+
+        &:first-child{
+            margin-right: 10px;
+        }
+    }
+}

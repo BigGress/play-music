@@ -1,0 +1,49 @@
+@import "./component/play.range.component.scss";
+.music,.music-footer{
+    background: #387ef5;
+    transform: all .2s;
+    text-align: center;
+
+    .music-icon{
+        // width:
+    }
+
+    .playInfo{
+        text-align: center;
+        padding: 0 2%;
+    }
+
+    .playBtnGroup{
+        background: #fff;
+
+        button{
+            right: 0;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+
+            &:last-child,&:first-child{
+                width: 40px;
+                height: 40px;
+            }
+
+            .button-inner{
+                position: relative
+            }
+
+            .music-icon.play{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -8px;
+                margin-left: -5px;
+                padding: 0;
+            }
+        }
+
+        .music-icon{
+
+        }
+    }
+}
+
